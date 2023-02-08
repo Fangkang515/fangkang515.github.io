@@ -45,13 +45,6 @@
     <div class="container"></div>
 	<h1 class="nerf_title_v2">PVD-AL</h1>
 	<h3 align="center" class="title is-4"> (Video display) </h3>
-	<!--<h3 class="nerf_subheader_v2">One is All: Bridging the Gap Between Neural Radiance Fields Architectures with Progressive Volume Distillation</h3>
-   <h2 class="nerf_title_v2">One is All: Bridging the Gap Between Neural Radiance Fields Architectures with Progressive Volume Distillation</h2>-->
-<!--    <h2 class="nerf_title_v2">Tensorial Radiance Fields</h2>  -->
-<!-- <h1 class="nerf_subheader_v2">One is All: Bridging </h1>  -->
-<!--    <h2>TensoRF: Tensorial Radiance Fields</h2>  -->
- <!--    <h3 class="nerf_subheader_v2">(AAAI 2023)</h3> -->
-<!--    <p class="abstract">A compact and efficent scene representation</p>  -->
     <hr>
 
 	 <div class="is-size-5 publication-authors">
@@ -92,8 +85,6 @@
 	 Megvii Inc</a>
     </p> -->
 
-    <!-- <div class="nerf_equal_v2"><span class="text-span_nerf">*</span><span class="text-span_nerf_star">*</span>Denotes Equal Contribution</div> -->
-
     </br></br>
     <div class="btn-group" role="group" aria-label="Top menu">
         <a class="btn btn-primary" href="https://arxiv.org/abs/2211.15977">Paper</a>
@@ -102,82 +93,6 @@
     </div>
 </div>
 
-<!--
-<body>
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">PVD Under Review</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://skfang.github.io">Shuangkang Fang</a><sup>1,2</sup>,</span>
-            <span class="author-block">
-              <a>Weixin Xu</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a>Heng Wang</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a>Yi Yang</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a>Yufeng Wang</a><sup>2*</sup>,</span>
-            <span class="author-block">                
-              <a href="https://zsc.github.io/">Shuchang Zhou</a><sup>1</sup></span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Megvii &nbsp;&nbsp;</span>
-            <span class="author-block"><sup>2</sup>Beihang University &nbsp;&nbsp;</span>
-          </div>
-          <h1 style="font-size:24px;font-weight:bold">AAAI Under Review</h1>
-          <div class="column has-text-centered">
-            <div class="publication-links">
-             
-              <span class="link-block">
-                <a href="static/paper.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-		    
-              <span class="link-block">
-                <a href="http://arxiv.org/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              
-               <span class="link-block">
-                <a href="static/supp.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Supp</span>
-                </a>
-              </span>
-              
-              <span class="link-block">
-                <a href="https://github.com/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
--->
 	
 </section>
 <section class="section">
@@ -203,61 +118,7 @@ For example, with PVD, an MLP-based NeRF model can be distilled from a hash tabl
       </div>
     </div>
   </div>
-  <!--/ Abstract. -->
 
-	<!--           
-    <div data-anchor="slide1" class="section nerf_section">
-        <div class="grey_container w-container">
-            <h2 class="grey-heading_nerf">
-                Abstract
-            </h2>
-            <p class="paragraph-3 nerf_text">
-                We present a novel approach to model and reconstruct radiance fields.
-                Unlike NeRF that uses pure MLPs,
-                we consider the full volume field as a 4D tensor and propose to factorize the tensor into multiple compact low-rank tensor components for efficient scene modeling.
-            </p>
-            <div class="columns-5 w-row">
-                <img src="img/teaser_v6.png" style="width:95%; margin-right:0px; margin-top:0px;">
-            </div>
-   
-            <p class="paragraph-3 nerf_text">
-                We model a scene (left) as a tensorial radiance field (right) using a set of vectors and matrices that describe scene appearance
-                and geometry along their corresponding axes. These vector/matrix factors are used to compute volume density and
-                view-dependent RGB color via vector-matrix outer products, leading to efficient radiance field reconstruction and realistic rendering.
-                </br>
-                We demonstrate that TensoRF with CP decomposition can achieve fast reconstruction with better rendering quality and even a smaller model size (<b>< 4MB</b>) than NeRF.
-                Moreover, TensoRF with VM decomposition can further boost our rendering quality to outperform previous state-of-the-art methods and reduce the reconstruction time (<b>< 10min</b> only with standard PyTorch implementation).
-            </p>     
-            <h2 class="grey-heading_nerf">
-                Method
-            </h2>
-            <p class="paragraph-3 nerf_text">
-                We factorize radiance fields into compact components for scene modeling.
-                To doso, we apply both the classic CP decomposition and a new vector-matrix (VM) decomposition; both are illustrated in following figure:
-            </p>
-            <div class="columns-5 w-row">
-                <img src="img/tensor_factorizationpng.png" style="width:95%; margin-right:0px; margin-top:0px;">
-            </div>
-            <p class="paragraph-3 nerf_text">
-                Left: CP decomposition, which factorizes atensor as a sum of vector outer products.
-                Right: our vector-matrix decomposition, which factorizes a tensor as a sum of vector-matrix outer products.
-                Please refer to our paper for more decomposition derails.
-            </p>
-
-
-            <div class="columns-5 w-row">
-                <img src="img/pipeline.png" style="width:95%; margin-right:0px; margin-top:10px;">
-            </div>
-
-            <p class="paragraph-3 nerf_text">
-                We now present our TensoRF representation and reconstruction. For each shading location <b>x</b> = (x,y,z), we use linearly/bilinearly sampled values from the vector (<b>v</b>)/matrix (<b>M</b>) factors to compute the corresponding trilinearly interpolated values of the tensor components.
-                The density component values (A<sub>σ</sub>(x)) are summed to get the volume density directly (σ).
-                The appearance values (A<sub>c</sub>(x)) are concatenated into a vector (⊕[A<sub>c</sub><sup style="margin-left:-8px">m</sup>(x)]<sub>m</sub>) that is then multiplied by an appearance matrix (<b>B</b>) and sent to the decoding function S for RGB color (c) regression.
-                The decoding function S can be a Spherical Harmonic (SH) function or a fully-connected network (FCN).
-            </p>
-        </div>
-    </div>
--->
 	
 </br></br>
 
@@ -415,33 +276,6 @@ For example, with PVD, an MLP-based NeRF model can be distilled from a hash tabl
   </div>
 </section>
 
-<!--<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code,align="left">@article{pvd2023,
-  author    = {Fang, Shuangkang and Xu, Weixin and Wang, Heng and Yang, Yi and Wang, Yufeng and Zhou, Shuchang},
-  title     = {One is All: Bridging the Gap Between Neural Radiance Fields Architectures with Progressive Volume Distillation},
-  journal   = {AAAI},
-  year      = {2023},
-}</code></pre>
-  </div>
-</section>-->
-
-<!--
-<section class="section" id="BibTeX">
-  <div class="container content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>
-@inproceedings{pvd2023,
-  author={Fang, Shuangkang and Xu, Weixin and Wang, Heng and Yang, Yi and Wang, Yufeng and Zhou, Shuchang},
-  title={One is All: Bridging the Gap Between Neural Radiance Fields Architectures with Progressive Volume Distillation},
-  booktitle={AAAI},
-  year={2023}
-}
-</code></pre>
-  </div>
-</section>
--->
     
 
 <footer class="footer">
