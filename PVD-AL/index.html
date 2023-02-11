@@ -206,25 +206,12 @@ For example, with PVD, an MLP-based NeRF model can be distilled from a hash tabl
         </div>
 	 <!-- improve model performance -->
         </br>
+
 	<!-- characteristic migration -->
         <h3 align="center" class="title is-4"> 4. characteristic migration </h3>
         <div class="content has-text-justified">
         </div>
-        <div class="content has-text-centered">
-          <video poster=""
-                 id="replay-video"
-		 autoplay
-                 controls
-		 muted
-                 loop
-                 width="63%"
-		 height="63%">
-            <source src="static/videos/all_edit.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
-             <div class="row">
+             <div class="row">  <!-- edit-1 -->
                     <div class="col-md-4 col-tight">
                         <video src="static/videos/edit/a-1.mp4" class="fullwid-vid" controls autoplay muted loop>
                         </video>
@@ -253,9 +240,48 @@ For example, with PVD, an MLP-based NeRF model can be distilled from a hash tabl
                             appearance+erasing in MLP or Tensors
                         </p>
                     </div>
-               </div>
+             </div>
+
+          <div class="row">  <!-- edit-2 -->
+                    <div class="col-md-4 col-tight">
+                        <video src="static/videos/edit/b-1.mp4" class="fullwid-vid" controls autoplay muted loop>
+                        </video>
+                        <p class="fullwid-centered">
+                            referance
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-tight">
+                        <video src="static/videos/edit/b-2-1.mp4" class="fullwid-vid" controls autoplay muted loop>
+                        </video>
+                        <p class="fullwid-centered">
+                            decompose in MLP
+                        </p>
+                    </div>
+		    <div class="col-md-4 col-tight">
+                        <video src="static/videos/edit/b-2-2.mp4" class="fullwid-vid" controls autoplay muted loop>
+                        </video>
+                        <p class="fullwid-centered">
+                            decompose in MLP
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-tight">
+                        <video src="static/videos/edit/b-3.mp4" class="fullwid-vid" controls autoplay muted loop>
+                        </video>
+                        <p class="fullwid-centered">
+                            compose in Tensors
+                        </p>
+                    </div>
+		       <div class="col-md-4 col-tight">
+                        <video src="static/videos/edit/b-4.mp4" class="fullwid-vid" controls autoplay muted loop>
+                        </video>
+                        <p class="fullwid-centered">
+                            decompose+compose in MLP or Tensors
+                        </p>
+                    </div>
+             </div>
 
 	<!-- characteristic migration -->
+
 	 </br>
 	 <!-- active learning as a plug-in -->
         <h3 align="center" class="title is-4">5. active learning as a plug-in </h3>
