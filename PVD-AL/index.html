@@ -182,13 +182,17 @@ For example, with PVD, an MLP-based NeRF model can be distilled from a hash tabl
 	
 	
 	 <!-- reduce training time -->
-	<div class="grey_container w-container">
+	<div class="columns is-centered has-text-centered">
+	<div class="column is-two-thirds">
         <h3 align="center" class="title is-4"> 2. reduce training time and compress model parameters </h3>
-	<p class="text-justify">
+	<div class="content has-text-justified">
+	  <p>
 	  With PVD-AL, an MLP-based NeRF model can be distilled from a hashtable-based Instant-NGP model at a 
 	  10X ~ 20X faster speed than being trained the original NeRF from scratch. 
-	</p>
-	</div>		
+	  </p>
+	</div>
+	</div>
+	</div>
         <div class="content has-text-justified">
         </div>
         <div class="content has-text-centered">
@@ -210,11 +214,15 @@ For example, with PVD, an MLP-based NeRF model can be distilled from a hash tabl
 
 
 	<!-- improve model performance -->
-        <div class="grey_container w-container">
+	<div class="columns is-centered has-text-centered">
+	<div class="column is-two-thirds">
         <h3 align="center" class="title is-4"> 3. improve model performance </h3> 
-	  <p class="text-justify">
+	<div class="content has-text-justified">
+	  <p>
 	  increase mean PSNR by XXX in llff datasets. 
 	  </p>
+	</div>
+	</div>
 	</div>
                     <!--<div class="col">
                         <video src="static/videos/improve-vis/res_0.mp4" class="fullwid-vid" controls autoplay muted loop width="80%" height="80%">
@@ -254,7 +262,17 @@ For example, with PVD, an MLP-based NeRF model can be distilled from a hash tabl
         </br>
 
 	<!-- characteristic migration -->
+	<div class="columns is-centered has-text-centered">
+	<div class="column is-two-thirds">
         <h3 align="center" class="title is-4"> 4. characteristic migration </h3>
+	<div class="content has-text-justified">
+	  <p>
+	  PVD-AL XXX edit abilities.
+	  </p>
+	</div>
+	</div>
+	</div>
+
         <div class="content has-text-justified">
         </div>
              <div class="row">  <!-- edit-1 lego: appearance+erasing <div class="col-md-4 col-tight"> -->
@@ -417,8 +435,29 @@ For example, with PVD, an MLP-based NeRF model can be distilled from a hash tabl
 
 	 </br>
 	 <!-- active learning as a plug-in -->
+	<div class="columns is-centered has-text-centered">
+	<div class="column is-two-thirds">
         <h3 align="center" class="title is-4">5. active learning as a plug-in </h3>
-        <div class="content has-text-justified">
+	<div class="content has-text-justified">
+	  <p>
+	  Active learning strategy can be used a plug-in to other distillation tasks.
+	  </p>
+	</div>
+	</div>
+	</div>
+
+        <div class="content has-text-centered">
+          <video poster=""
+                 id="replay-video"
+		 autoplay
+                 controls
+		 muted
+                 loop
+                 width="70%"
+		 height="70%">
+            <source src="static/videos/plug-in/fern/res.mp4"
+                    type="video/mp4">
+          </video>
         </div>
         <div class="content has-text-centered">
           <video poster=""
@@ -427,9 +466,9 @@ For example, with PVD, an MLP-based NeRF model can be distilled from a hash tabl
                  controls
 		 muted
                  loop
-                 width="90%"
-		 height="90%">
-            <source src="static/videos/hash2others-1.2mul-tanks-withTea.mp4"
+                 width="70%"
+		 height="70%">
+            <source src="static/videos/plug-in/lego/res.mp4"
                     type="video/mp4">
           </video>
         </div>
