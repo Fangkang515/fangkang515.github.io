@@ -162,15 +162,20 @@ For example, with PVD, an MLP-based NeRF model can be distilled from a hash tabl
 		<!--<h3 align="center" class="title is-4">1. mutual-conversion between different NeRF architectures </h3>-->
 			<div class="content has-text-justified">
 			  <p>
-			    PVD-AL allows conversions between 
-			    different NeRF architectures, including MLP, sparse Tensors, low-rank Tensors and hashtables, 
-			    breaking down the barrier of independent research between them and reaching their full potential.
+                                  Progressive Volume Distillation with Active Learning (PVD-AL) is a systematic distillation 
+				  method that enables any-to-any conversions between different architectures. PVD-AL decomposes 
+				  each structure into two parts and progressively performs distillation from shallower to deeper 
+				  volume representation, leveraging effective information retrieved from the rendering process. 
+				  Additionally, a Three-Levels of active learning technique provides continuous feedback during 
+				  the distillation process regarding which camera poses, sample rays, 
+				  and sample points are challenging to fit. After receiving this feedback, students will 
+				  actively increase their attention to this crucial knowledge, resulting in high-performance distillation results.
 			  </p>
 			</div>
 		</div>
 	</div>
 	<div align="center" style="margin-top:80px;" style="margin-bottom:120px;">
-		<img style='height: auto; width: 125%; object-fit: contain' src="static/images/PVD-AL.png" alt="overview_image">
+		<img style='height: auto; width: 80%; object-fit: contain' src="static/images/PVD-AL.png" alt="overview_image">
 	</div> 
 	  
 	      
