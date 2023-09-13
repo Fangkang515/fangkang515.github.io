@@ -243,19 +243,6 @@ Finally, both the perturbation dataset and regularization terms are incorporated
 	<div align="center" style="margin-top:80px;" style="margin-bottom:120px;">
 		<img style='height: auto; width: 125%; object-fit: contain' src="static/images/pipeline.png" alt="overview_image">
 	</div> 	
-	
-	<p class="paragraph-3 nerf_text">
-		Loss on intermediate volume representations (shown as double arrow symbol) like output of φ, 
-		color and constrained density are used alongside the final rendered RGB volume to accelerate the distillation. 
-	</p>
-	<div align="center" style="margin-top:80px;" style="margin-bottom:120px;">
-		<img style='height: auto; width: 35%; object-fit: contain' src="static/images/table_division.png" alt="overview_image">
-	</div> 
-	<p class="paragraph-3 nerf_text">
-	    We observed that the implicit and explicit structures in the hybrid representation are naturally separated and correspond to different 
-	    learning objectives. Therefore, we consider splitting a model into this similar expression forms so that different parts can 
-	    be aligned during distillation just like descripted in the table above.
-	</p>
 </div>
 
 <section class="section">
