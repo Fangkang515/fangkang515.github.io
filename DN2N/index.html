@@ -36,7 +36,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  <title>One is All: Bridging the Gap Between Neural Radiance Fields Architectures with Progressive Volume Distillation</title>
+  <title>Text-driven Editing of 3D Scenes without Retraining</title>
  
 </head>
 	
@@ -232,10 +232,13 @@ Most importantly, our method generalizes well with editing abilities shared amon
 	<!-- -->
 	<h2 class="title is-2">Method</h2>
 	<p class="paragraph-3 nerf_text">
-		Our method aims to achieve mutual conversions between different architectures based on Radiance Fields. The architectures we have derived
-		formula include implicit representations like MLP in NeRF, explicit representations like sparse tensors in Plenoxels, and 
-		two hybrid representations: hash tables (in INGP) and low-rank tensors (VM-decomposition in TensoRF). Once formulated, 
-		any-to-any conversion between these architectures and their compositions is possible using PVD. 
+We initially utilized a 2D editing model to perform the preliminary editing on the images of a 3D scene. We subsequently apply a designed content filter to remove images with poor editing results that cause significant 3D inconsistency.
+However, the remaining images after selection may still contain inconsistent 3D results, in which we consider as noise perturbation to the consistent edited images due to the inherent stochastic and diverse nature of the 2D editing model.
+Thus, we leverage this characteristic to create training data pairs by generating image captions through the BLIP model and target captions via GPT, then applying minor perturbations associated with these captions to a 3D scene.
+Therefore, these perturbations can be viewed as noise, as well as unedited images as pseudo-ground truth.
+Based on this produced training data, we introduce two cross-view regularization terms during training, including the self and neighboring views, to improve the 3D editing consistency. 
+The former requires the NeRF model to generate consistent results for the same target view that derives from two different source views, while the latter enforces the overlapping pixel values between the target and adjacent views to be approximately close.
+Finally, both the perturbation dataset and regularization terms are incorporated into our generalizable NeRF model training to facilitate its 3D consistency. 
 	</p>
 	<div align="center" style="margin-top:80px;" style="margin-bottom:120px;">
 		<img style='height: auto; width: 125%; object-fit: contain' src="static/images/overview.png" alt="overview_image">
