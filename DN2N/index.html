@@ -43,32 +43,18 @@
 <body>
 <div class="jumbotron jumbotron-fluid">
     <div class="container"></div>
-	<h1 class="nerf_title_v2">PVD</h1>
-	<h3 align="center" class="title is-4"> (Oral at AAAI 2023) </h3>
-	<h3 class="nerf_subheader_v2">One is All: Bridging the Gap Between Neural Radiance Fields Architectures with Progressive Volume Distillation</h3>
-	<h3 class="nerf_subheader_v2" <a href="https://arxiv.org/abs/2304.04012"> (We have updated a more powerful method called PVDAL: https://arxiv.org/abs/2304.04012)</a> </h3>
-   <!--<h2 class="nerf_title_v2">One is All: Bridging the Gap Between Neural Radiance Fields Architectures with Progressive Volume Distillation</h2>-->
-<!--    <h2 class="nerf_title_v2">Tensorial Radiance Fields</h2>  -->
-<!-- <h1 class="nerf_subheader_v2">One is All: Bridging </h1>  -->
-<!--    <h2>TensoRF: Tensorial Radiance Fields</h2>  -->
- <!--    <h3 class="nerf_subheader_v2">(AAAI 2023)</h3> -->
-<!--    <p class="abstract">A compact and efficent scene representation</p>  -->
+	<h1 class="nerf_title_v2">DN2N</h1>
+	<!--<h3 align="center" class="title is-4"> (Oral at AAAI 2023) </h3>-->
+	<h3 class="nerf_subheader_v2">Text-driven Editing of 3D Scenes without Retraining</h3>
     <hr>
     <p class="authors">
-	 Shuangkang Fang</a>,
-         Weixin Xu</a>,
-         Heng Wang</a>,
-         Yi Yang</a>,
-         Yufeng Wang</a>,
-	 Shuchang Zhou</a>
-	<!--   
         <a href="https://github.io/"> Shuangkang Fang</a>,
-        <a href="http://github.io/"> Weixin Xu</a>,
-        <a href="http://github.io/"> Heng Wang</a>,
-        <a href="https://github.io/"> Yi Yang</a>,
-        <a href="https://github.io/"> Yufeng Wang</a>,
+        <a href="http://github.io/"> Yufeng Wang</a>,
+        <a href="http://github.io/"> Yi Yang</a>,
+        <a href="https://github.io/"> Yi-Hsuan Tsai</a>,
+        <a href="https://github.io/"> Wenrui Ding</a>,
+	    <a href="https://github.io/"> Ming-Hsuan Yang</a>,
 	<a href="https://zsc.github.io/"> Shuchang Zhou</a>
-        -->
     </p>
 
     <!-- <div class="nerf_equal_v2"><span class="text-span_nerf">*</span><span class="text-span_nerf_star">*</span>Denotes Equal Contribution</div> -->
@@ -169,14 +155,15 @@
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Neural Radiance Fields (NeRF) methods have proved effective as compact, high-quality and versatile representations for 3D scense, and enable downstream tasks such as editing, retrieval, navigation, etc.  
-Various neural architectures are vying for the core data structure of NeRF, including the plain Multi-Layer Perceptron (MLP), sparse tensors, low-rank tensors, hash tables and their compositions. 
-Each of these representations has its particular set of trade-offs. For example, the hash table based representations admit faster training and rendering but their lack of clear geometric meaning hampers downstream tasks like spatial-relation-aware editing. 
-In this paper, we propose Progressive Volume Distillation (PVD), a systematic distillation method that allows any-to-any conversions between different neural architectures, including MLP, sparse or low-rank tensors, hash tables and their compositions. 
-PVD consequently empowers downstream applications to optimally adapt the neural representations for the task in hand in a post hoc fashion. 
-The conversions are fast, as distillation is progressively performed on different levels of volume representations, from shallower to deeper. We also employ special treatment of density volume to deal with its specific numerical instability problem.
-Empirical evidences are presented to validate our method on the NeRF-Synthetic, LLFF and TanksAndTemples datasets. 
-For example, with PVD, an MLP-based NeRF model can be distilled from a hash table-based Instant-NGP model at a 10X ~ 20X faster speed than being trained from scratch, while achieving superior level of sysnthesis quality.
+            Numerous diffusion models have recently been applied to image synthesis and editing. 
+However, editing 3D scenes is still in its early stages. It poses various challenges, such as the requirement to design specific methods for different editing types, retraining new models for various 3D scenes, and the absence of convenient human interaction during editing.
+To tackle these issues, we introduce a text-driven editing method, termed DN2N, which allows for the direct acquisition of a NeRF model with universal editing capabilities, eliminating the requirement for retraining. 
+Our method employs off-the-shelf text-based editing models of 2D images to modify the 3D scene images, followed by a filtering process to discard poorly edited images that disrupt 3D consistency. 
+We then consider the remaining inconsistency as a problem of removing noise perturbation, which can be solved by generating training data with similar perturbation characteristics for training.
+We further propose cross-view regularization terms to help the generalized NeRF model mitigate these perturbations.
+Our text-driven method allows users to edit a 3D scene with their desired description, which is more friendly, intuitive, and practical than prior works.
+Empirical results show that our method achieves multiple editing types, including but not limited to appearance editing, weather transition, material changing, and style transfer. 
+Most importantly, our method generalizes well with editing abilities shared among a set of model parameters without requiring a customized editing model for some specific scenes, thus inferring novel views with editing effects directly from user input.
           </p>
 
         </div>
