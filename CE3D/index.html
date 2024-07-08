@@ -74,7 +74,7 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Beihang University;  </span>
             <span class="author-block"><sup>2</sup>Google;  </span>
-            <span class="author-block"><sup>3</sup>Megvii;  </span>
+            <span class="author-block"><sup>3</sup>StepFun;  </span>
             <span class="author-block"><sup>4</sup>University of California, Merced</span>
           </div>
 
@@ -183,26 +183,24 @@
         <div class="content has-text-justified">
           <p>
             <span class="dnerf">CoMo</span> represents motions as
-<i>pose codes</i>, with each code defining the state of a specific body
-part at a given moment, e.g., "right arm straight". Leveraging pose codes as interpretable motion representations,
-the three main components of <span class="dnerf">CoMo</span> work jointly to effectively
-<b>generate</b> and <b>edit</b> motion: (1) The Motion Encoder-Decoder parses
-motions into sequences of pose codes and reconstructs them back
-into motions by learning a decoder; (2) The Motion Generator, a
-transformer-based model, generates pose codes conditioned on text
-inputs and LLM-generated fine-grained descriptions; (3) The Motion
-Editor uses LLM to modify and refine the pose codes based on editing
-instructions.
+            <i>pose codes</i>, with each code defining the state of a specific body
+            part at a given moment, e.g., "right arm straight". Leveraging pose codes as interpretable motion representations,
+            the three main components of <span class="dnerf">CoMo</span> work jointly to effectively
+            <b>generate</b> and <b>edit</b> motion: (1) The Motion Encoder-Decoder parses
+            motions into sequences of pose codes and reconstructs them back
+            into motions by learning a decoder; (2) The Motion Generator, a
+            transformer-based model, generates pose codes conditioned on text
+            inputs and LLM-generated fine-grained descriptions; (3) The Motion
+            Editor uses LLM to modify and refine the pose codes based on editing
+            instructions.
          </p>
           <!-- Method video. -->
-          <!-- <img id="teaser" height="100%" src="./static/videos/como_diagram.png">         </img>-->  
+          <!-- <img id="teaser" height="100%" src="./static/videos/como_diagram.png">   </img>-->  
           <video id="teaser" autoplay muted playsinline height="100%">
-            <source src="./static/videos/como_video_up.mp4"
-                    type="video/mp4">
+            <source src="./static/videos/como_video_up.mp4" type="video/mp4">
           </video>
           <!-- <video id="teaser" autoplay muted playsinline height="100%">
-            <source src="./static/videos/como_video_2.mp4"
-                    type="video/mp4">
+            <source src="./static/videos/como_video_2.mp4" type="video/mp4">
           </video> -->
         </div>
       </div>
