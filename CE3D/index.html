@@ -182,17 +182,13 @@
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <p>
-            <span class="dnerf">CoMo</span> represents motions as
-            <i>pose codes</i>, with each code defining the state of a specific body
-            part at a given moment, e.g., "right arm straight". Leveraging pose codes as interpretable motion representations,
-            the three main components of <span class="dnerf">CoMo</span> work jointly to effectively
-            <b>generate</b> and <b>edit</b> motion: (1) The Motion Encoder-Decoder parses
-            motions into sequences of pose codes and reconstructs them back
-            into motions by learning a decoder; (2) The Motion Generator, a
-            transformer-based model, generates pose codes conditioned on text
-            inputs and LLM-generated fine-grained descriptions; (3) The Motion
-            Editor uses LLM to modify and refine the pose codes based on editing
-            instructions.
+            We propose a novel editing paradigm by fully decoupling the 2D model from the 3D reconstruction process: 
+            A neural network that maps the different views of a 3D scene to plane atlases is initially learned. 
+            Subsequently, it transforms the editing of the 3D scene into operations performed within the 2D atlas space. 
+            Since the atlases inherently accommodate 2D visual models, there is no need for additional design to adapt 2D 
+            visual models to the 3D reconstruction process, which ensures the flexible integration of multiple visual experts. 
+            Finally, by leveraging LLMs for parsing user text input and managing various visual models, 
+            our framework achieves editing of a 3D scene through chatting, which we refer to as Chat-Edit-3D (CE3D).
          </p>
           <!-- Method video. -->
           <img id="teaser" height="80%" src="./static/images/Hash-Atlas.png">  
@@ -483,42 +479,7 @@
   </div>  
   </div>
 
-      <!-- <div class="container is-max-desktop">
-        <div id="results-carousel2" class="carousel results-carousel2">
-          <div class="item item-steve">
-            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/part.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-chair-tp">
-            <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/speed.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-shiba">
-            <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/style.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-fullbody">
-            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/add.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
-            <script>
-                bulmaCarousel.attach('#results-carousel2', {
-                      slidesToScroll: 1,
-                      slidesToShow: 1,
-                      loop: true,
-                });
-            </script>
-      </div> -->
+
   </div>
 </section>
 <section class="section">
