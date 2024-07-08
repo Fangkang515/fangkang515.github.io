@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Controllable Motion Generation and Editing with LLMs">
+        content="Chat-Edit-3D: Interactive 3D Scene Editing via Text Prompts">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> CE3D </title>
+  <title> Chat-Edit-3D </title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -36,7 +36,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><span class="icon-svg"></span>CE3D: <u>C</u>hat <u>E</u>dit  <u>3D</u>: Interactive 3D Scene Editing via Text Prompts</h1>
+          <h1 class="title is-1 publication-title"><span class="icon-svg"></span><u>C</u>hat <u>E</u>dit  <u>3D</u>: Interactive 3D Scene Editing via Text Prompts</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="http://sk-fun.fun/">Shuangkang Fang</a><sup>1</sup>,</span>
@@ -129,9 +129,9 @@
   <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/9dSkvxS2EB0?si=LEwX_XgrN72pubeJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         <iframe width="784" height="441" src="https://www.youtube.com/embed/9dSkvxS2EB0?si=LEwX_XgrN72pubeJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">CE3D</span> is a interactive framework for 3D scene editing.
+        <span class="dnerf">CE3D</span> is an interactive framework for 3D scene editing.
       </h2>
     </div>
   </div>
@@ -146,11 +146,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Text-to-motion models excel at efficient human motion generation through natural language, while existing approaches lack fine-grained spatiotemporal control over the generation process. Consequently, modifying subtle postures within a motion or inserting new actions at specific moments remains a challenge, limiting the applicability of these methods in diverse scenarios. 
-            In light of these challenges, we introduce <b><span class="dnerf">CoMo</span></b>, a <u>Co</u>ntrollable <u>Mo</u>tion generation model, adept at accurately generating and editing motions by leveraging the knowledge priors of large language models (LLMs). 
-            Specifically, <span class="dnerf">CoMo</span> decomposes motions into discrete and semantically meaningful <i>pose codes</i>, with each code encapsulating the semantics of a body part, representing elementary information such as 'left knee slightly bent'. 
-            Given textual inputs, <span class="dnerf">CoMo</span> autoregressively generates sequences of pose codes, which are then decoded into 3D motions. Leveraging pose codes as interpretable representations, an LLM can directly intervene in motion editing by adjusting the pose codes according to editing instructions. 
-            Our experiments demonstrate that <span class="dnerf">CoMo</span> achieves competitive performance in motion generation compared to state-of-the-art models while surpassing previous work in motion editing, as evaluated through human assessments.
+              Recent work on image content manipulation based on vision-language pre-training models has been effectively extended to text-driven 3D scene editing.
+              However, existing schemes for 3D scene editing still exhibit certain shortcomings, hindering their further interactive design.
+              Such schemes typically adhere to fixed input patterns, limiting users' flexibility in text input. Moreover, their editing capabilities are constrained by a single or a few 2D visual models and require intricate pipeline design to integrate these models into 3D reconstruction processes.
+              To address the aforementioned issues, we propose a dialogue-based 3D scene editing approach, termed <span class="dnerf">CE3D</span>, which is centered around a large language model that allows for arbitrary textual input from users and interprets their intentions, subsequently facilitating the autonomous invocation of the corresponding visual expert models.
+              Furthermore, we design a scheme utilizing Hash-Atlas to represent 3D scene views, which transfers the editing of 3D scenes onto 2D atlas images.
+              This design achieves complete decoupling between the 2D editing and 3D reconstruction processes, enabling <span class="dnerf">CE3D</span> to flexibly integrate a wide range of existing 2D or 3D visual models without necessitating intricate fusion designs.
+              Experimental results demonstrate that <span class="dnerf">CE3D</span> effectively integrates multiple visual models to achieve diverse editing visual effects, possessing strong scene comprehension and multi-round dialog capabilities.
           </p>
         </div>
       </div>
