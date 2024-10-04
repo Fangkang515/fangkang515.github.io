@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Chat-Edit-3D: Interactive 3D Scene Editing via Text Prompts">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Chat-Edit-3D </title>
+
+  <style>
+    .video-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .subtitle {
+      text-align: center;
+    }
+  </style>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <!-- <script src="./static/js/index.js"></script> -->
+</head>
+<body>
+<section class="hero publication-header">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span class="icon-svg"></span><u>C</u>hat <u>E</u>dit  <u>3D</u>: Interactive 3D Scene Editing via Text Prompts</h1>
+          <h1 class="title is-1 publication-title">ECCV 2024</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="http://sk-fun.fun/">Shuangkang Fang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://shi.buaa.edu.cn/wangyufeng1/zh_CN/index.htm">Yufeng Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/yihsuantsai/">Yi-Hsuan Tsai</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=5u95wzMAAAAJ">Yi Yang</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://shi.buaa.edu.cn/dingwenrui/zh_CN/index/127041/list/index.htm">Wenrui Ding</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zsc.github.io/">Shuchang Zhou</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a><sup>2,4</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Beihang University;  </span>
+            <span class="author-block"><sup>2</sup>Google;  </span>
+            <span class="author-block"><sup>3</sup>Megvii;  </span>
+            <span class="author-block"><sup>4</sup>University of California, Merced</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="../papers/como.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2407.06842"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Fangkang515/CE3D/tree/main"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=btO1Ky9I21s"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-laptop-code"></i>
+                  </span>
+                  <span>Video</span>
+                  </a>
+              </span>
+              <!-- Email Link. 
+              <span class="link-block">
+                <a href="skfang@buaa.edu.cn"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-envelope"></i>
+                  </span>
+                  <span>Email</span>
+                  </a>
+              </span>
+              -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="video-container">
+          <video id="teaser" autoplay loop muted playsinline height="80%">
+              <source src="./static/videos/demo.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+  </div>
+ </section>
+
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="video-container">
+         <iframe width="784" height="440" src="https://www.youtube.com/embed/btO1Ky9I21s?si=2vTgamL4NaYM5gWH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">CE3D</span> is an interactive 3D scene editing framework that leverages an LLM to integrate dozens of different models.
+      </h2>
+    </div>
+  </div>
+</section>
+    
+  
+<section class="section is-light is-small abs">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+              Recent work on image content manipulation based on vision-language pre-training models has been effectively extended to text-driven 3D scene editing.
+              However, existing schemes for 3D scene editing still exhibit certain shortcomings, hindering their further interactive design.
+              Such schemes typically adhere to fixed input patterns, limiting users' flexibility in text input. Moreover, their editing capabilities are constrained by a single or a few 2D visual models and require intricate pipeline design to integrate these models into 3D reconstruction processes.
+              To address the aforementioned issues, we propose a dialogue-based 3D scene editing approach, termed <span class="dnerf">CE3D</span>, which is centered around a large language model that allows for arbitrary textual input from users and interprets their intentions, subsequently facilitating the autonomous invocation of the corresponding visual expert models.
+              Furthermore, we design a scheme utilizing Hash-Atlas to represent 3D scene views, which transfers the editing of 3D scenes onto 2D atlas images.
+              This design achieves complete decoupling between the 2D editing and 3D reconstruction processes, enabling <span class="dnerf">CE3D</span> to flexibly integrate a wide range of existing 2D or 3D visual models without necessitating intricate fusion designs.
+              Experimental results demonstrate that <span class="dnerf">CE3D</span> effectively integrates multiple visual models to achieve diverse editing visual effects, possessing strong scene comprehension and multi-round dialog capabilities.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+<section class="section", id="method">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose a novel editing paradigm by fully decoupling the 2D model from the 3D reconstruction process: 
+            A neural network that maps the different views of a 3D scene to plane atlases is initially learned. 
+            Subsequently, it transforms the editing of the 3D scene into operations performed within the 2D atlas space. 
+            Since the atlases inherently accommodate 2D visual models, there is no need for additional design to adapt 2D 
+            visual models to the 3D reconstruction process, which ensures the flexible integration of multiple visual experts. 
+            Finally, by leveraging LLMs for parsing user text input and managing various visual models, 
+            our framework achieves editing of a 3D scene through chatting, which we refer to as Chat-Edit-3D (CE3D).
+         </p>
+          <!-- Method video. -->
+          <img id="teaser" height="80%" src="./static/images/Hash-Atlas.png">  
+          <img id="teaser" height="80%" src="./static/images/CE3D_pipe.png">  
+            <!-- <video id="teaser" autoplay muted playsinline height="150%">
+              <source src="./static/videos/method_illustration.mp4" type="video/mp4">
+            </video>
+            -->
+        </div>
+      </div>
+  </div>
+</section>
+
+<!--
+<section class="section", id="method">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <video id="teaser" autoplay muted playsinline height="80%">
+              <source src="./static/videos/demo_github.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+  </div>
+</section>
+-->
+
+
+
+
+
+
+
+
+
+
+
+  
+<!--
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Works</h2>
+        <div class="content has-text-justified">
+          <p>
+            <a ref="https://mael-zys.github.io/T2M-GPT/">[1] Zhang et al. T2M-GPT: Generating Human Motion from
+              Textual Descriptions with Discrete Representations. CVPR, 2023.</a>
+          </p>
+          <p>
+            <a ref="https://mingyuan-zhang.github.io/projects/FineMoGen.html">[2] Zhang et al. FineMoGen: Fine-Grained Spatio-Temporal Motion Generation and Editing.
+              NeurIPS, 2023.</a>
+          </p>
+          <p>
+            <a ref="https://europe.naverlabs.com/research/computer-vision/posescript/">[3] Delmas et al. PoseScript: 3D Human Poses from Natural Language.
+              ECCV, 2022.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{fang2024ce3d,
+      title={Chat-Edit-3D: Interactive 3D Scene Editing via Text Prompts}, 
+      author={Shuangkang Fang and Yufeng Wang and Yi-Hsuan Tsai and Yi Yang and Wenrui Ding and Shuchang Zhou and Ming-Hsuan Yang},
+      year={2024},
+      eprint={2407.06842},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code></pre>
+<!-- <pre><code>Coming Soon</code></pre> -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://arxiv.org/abs/2407.06842" class="external-link" disabled>
+        <i class="ai ai-arxiv"></i>
+      </a>
+      
+      <a class="icon-link" href="https://github.com/Fangkang515/CE3D/tree/main" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+      
+      <a class="icon-link" href="mailto: skfang@buaa.edu.cn" class="external-link" disabled>
+        <i class="fas fa-envelope"></i>
+      </a>
+      
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content", style="text-align: center;">
+          <p>
+            This website was developed referencing <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
