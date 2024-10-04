@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Chat-Edit-3D: Interactive 3D Scene Editing via Text Prompts">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="Editing 3D Scenes via Text Prompts without Retraining">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF, 3D Scene Editing">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Chat-Edit-3D </title>
+  <title> DN2N </title>
 
   <style>
     .video-container {
@@ -48,8 +48,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><span class="icon-svg"></span><u>C</u>hat <u>E</u>dit  <u>3D</u>: Interactive 3D Scene Editing via Text Prompts</h1>
-          <h1 class="title is-1 publication-title">ECCV 2024</h1>
+          <h1 class="title is-1 publication-title">Editing 3D Scenes via Text Prompts without Retraining</h1>
+          <!-- <h1 class="title is-1 publication-title">ECCV 2024</h1> -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="http://sk-fun.fun/">Shuangkang Fang</a><sup>1</sup>,</span>
@@ -81,16 +81,6 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="../papers/como.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span> -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2407.06842"
                    class="external-link button is-normal is-rounded is-dark">
@@ -119,19 +109,7 @@
                   <span>Video</span>
                   </a>
               </span>
-              <!-- Email Link. 
-              <span class="link-block">
-                <a href="skfang@buaa.edu.cn"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-envelope"></i>
-                  </span>
-                  <span>Email</span>
-                  </a>
-              </span>
-              -->
             </div>
-
           </div>
         </div>
       </div>
@@ -169,16 +147,11 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">What are the advantages of DN2N?</h2>
         <div class="content has-text-justified">
           <p>
-              Recent work on image content manipulation based on vision-language pre-training models has been effectively extended to text-driven 3D scene editing.
-              However, existing schemes for 3D scene editing still exhibit certain shortcomings, hindering their further interactive design.
-              Such schemes typically adhere to fixed input patterns, limiting users' flexibility in text input. Moreover, their editing capabilities are constrained by a single or a few 2D visual models and require intricate pipeline design to integrate these models into 3D reconstruction processes.
-              To address the aforementioned issues, we propose a dialogue-based 3D scene editing approach, termed <span class="dnerf">CE3D</span>, which is centered around a large language model that allows for arbitrary textual input from users and interprets their intentions, subsequently facilitating the autonomous invocation of the corresponding visual expert models.
-              Furthermore, we design a scheme utilizing Hash-Atlas to represent 3D scene views, which transfers the editing of 3D scenes onto 2D atlas images.
-              This design achieves complete decoupling between the 2D editing and 3D reconstruction processes, enabling <span class="dnerf">CE3D</span> to flexibly integrate a wide range of existing 2D or 3D visual models without necessitating intricate fusion designs.
-              Experimental results demonstrate that <span class="dnerf">CE3D</span> effectively integrates multiple visual models to achieve diverse editing visual effects, possessing strong scene comprehension and multi-round dialog capabilities.
+              State-of-the-art methods are not versatile since they require training 10,000 models for 100 types of editing on 100 scenes. 
+              In contrast, our research aims to accomplish these edits with a single model.          
           </p>
         </div>
       </div>
@@ -194,17 +167,20 @@
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <p>
-            We propose a novel editing paradigm by fully decoupling the 2D model from the 3D reconstruction process: 
-            A neural network that maps the different views of a 3D scene to plane atlases is initially learned. 
-            Subsequently, it transforms the editing of the 3D scene into operations performed within the 2D atlas space. 
-            Since the atlases inherently accommodate 2D visual models, there is no need for additional design to adapt 2D 
-            visual models to the 3D reconstruction process, which ensures the flexible integration of multiple visual experts. 
-            Finally, by leveraging LLMs for parsing user text input and managing various visual models, 
-            our framework achieves editing of a 3D scene through chatting, which we refer to as Chat-Edit-3D (CE3D).
+            We initially utilized a 2D editing model to perform the preliminary editing on the images of a 3D scene. 
+            We subsequently apply a designed content filter to remove images with poor editing results that cause significant 3D inconsistency. 
+            However, the remaining images after selection may still contain inconsistent 3D results, 
+            in which we consider as noise perturbation to the consistent edited images due to the inherent stochastic and diverse nature of the 2D editing model. 
+            Thus, we leverage this characteristic to create training data pairs by generating image captions through the BLIP model and target captions via GPT, 
+            then applying minor perturbations associated with these captions to a 3D scene. Therefore, these perturbations can be viewed as noise, 
+            as well as unedited images as pseudo-ground truth. Based on this produced training data, we introduce two cross-view regularization terms during training, 
+            including the self and neighboring views, to improve the 3D editing consistency. 
+            The former requires the NeRF model to generate consistent results for the same target view that derives from two different source views, 
+            while the latter enforces the overlapping pixel values between the target and adjacent views to be approximately close. 
+            Finally, both the perturbation dataset and regularization terms are incorporated into our generalizable NeRF model training to facilitate its 3D consistency.
          </p>
           <!-- Method video. -->
-          <img id="teaser" height="80%" src="./static/images/Hash-Atlas.png">  
-          <img id="teaser" height="80%" src="./static/images/CE3D_pipe.png">  
+          <img id="teaser" height="80%" src="./static/images/pipeline.png">  
             <!-- <video id="teaser" autoplay muted playsinline height="150%">
               <source src="./static/videos/method_illustration.mp4" type="video/mp4">
             </video>
@@ -214,74 +190,24 @@
   </div>
 </section>
 
-<!--
+
 <section class="section", id="method">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <h2 class="title is-3">Results</h2>
+        <h2 class="title is-3">Video Display</h2>
         <div class="content has-text-justified">
           <video id="teaser" autoplay muted playsinline height="80%">
-              <source src="./static/videos/demo_github.mp4" type="video/mp4">
+              <source src="./static/videos/fang.mp4" type="video/mp4">
             </video>
         </div>
       </div>
   </div>
 </section>
--->
 
 
 
 
-
-
-
-
-
-
-
-  
-<!--
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Works</h2>
-        <div class="content has-text-justified">
-          <p>
-            <a ref="https://mael-zys.github.io/T2M-GPT/">[1] Zhang et al. T2M-GPT: Generating Human Motion from
-              Textual Descriptions with Discrete Representations. CVPR, 2023.</a>
-          </p>
-          <p>
-            <a ref="https://mingyuan-zhang.github.io/projects/FineMoGen.html">[2] Zhang et al. FineMoGen: Fine-Grained Spatio-Temporal Motion Generation and Editing.
-              NeurIPS, 2023.</a>
-          </p>
-          <p>
-            <a ref="https://europe.naverlabs.com/research/computer-vision/posescript/">[3] Delmas et al. PoseScript: 3D Human Poses from Natural Language.
-              ECCV, 2022.</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
--->
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{fang2024ce3d,
-      title={Chat-Edit-3D: Interactive 3D Scene Editing via Text Prompts}, 
-      author={Shuangkang Fang and Yufeng Wang and Yi-Hsuan Tsai and Yi Yang and Wenrui Ding and Shuchang Zhou and Ming-Hsuan Yang},
-      year={2024},
-      eprint={2407.06842},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}</code></pre>
-<!-- <pre><code>Coming Soon</code></pre> -->
-  </div>
-</section>
 
 
 <footer class="footer">
