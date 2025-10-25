@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Chat-Edit-3D: Interactive 3D Scene Editing via Text Prompts">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Chat-Edit-3D </title>
+
+  <style>
+    .video-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .subtitle {
+      text-align: center;
+    }
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+<section class="hero publication-header">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span class="icon-svg"></span><u>C</u>hat <u>E</u>dit  <u>3D</u>: Interactive 3D Scene Editing via Text Prompts (Large Language Model)</h1>
+          <h1 class="title is-1 publication-title">ECCV 2024</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="http://sk-fun.fun/">Shuangkang Fang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://shi.buaa.edu.cn/wangyufeng1/zh_CN/index.htm">Yufeng Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/yihsuantsai/">Yi-Hsuan Tsai</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=5u95wzMAAAAJ">Yi Yang</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://shi.buaa.edu.cn/dingwenrui/zh_CN/index/127041/list/index.htm">Wenrui Ding</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=zYI0rysAAAAJ&hl=fr&oi=ao">Shuchang Zhou</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=p9-ohHsAAAAJ&hl=fr">Ming-Hsuan Yang</a><sup>2,4</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Beihang University;  </span>
+            <span class="author-block"><sup>2</sup>Google;  </span>
+            <span class="author-block"><sup>3</sup>Megvii;  </span>
+            <span class="author-block"><sup>4</sup>University of California, Merced</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="../papers/como.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2407.06842"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Fangkang515/CE3D/tree/main"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=btO1Ky9I21s"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-laptop-code"></i>
+                  </span>
+                  <span>Video</span>
+                  </a>
+              </span>
+              <!-- Email Link. 
+              <span class="link-block">
+                <a href="skfang@buaa.edu.cn"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-envelope"></i>
+                  </span>
+                  <span>Email</span>
+                  </a>
+              </span>
+              -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="video-container">
+          <video id="teaser" autoplay loop muted playsinline height="80%">
+              <source src="./static/videos/demo.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+  </div>
+ </section>
+
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="video-container">
+         <iframe width="784" height="440" src="https://www.youtube.com/embed/btO1Ky9I21s?si=2vTgamL4NaYM5gWH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">CE3D</span> is an interactive 3D scene editing framework that leverages an LLM to integrate dozens of different models.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!--
+<section class="section", id="method">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">LLM-Driven 3D Scene Editing</h2>
+        <div class="content has-text-justified">
+          <img id="teaser" height="80%" src="./static/images/chat.png">  
+        </div>
+      </div>
+  </div>
+</section>
+-->
+
+  
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="video-container">
+          <video id="teaser" autoplay loop muted playsinline style="height: 250%; width: auto;">
+              <source src="./static/videos/multiround-onybyone-35s.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+  </div>
+ </section>
+
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="video-container">
+          <video id="teaser" autoplay loop muted playsinline style="height: 100%; width: auto;">
+              <source src="./static/videos/compare-1.mp4" type="video/mp4">
+          </video>
+          <video id="teaser" autoplay loop muted playsinline style="height: 100%; width: auto;">
+              <source src="./static/videos/compare-2.mp4" type="video/mp4">
+          </video>
+      </div>
+    </div>
+  </div>
+ </section>
+  
+  
+<section class="section", id="method">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Various Editing Abilities</h2>
+        <div class="video-container">
+          <video id="teaser" autoplay loop muted playsinline style="height: 100%; width: auto;">
+              <source src="./static/videos/various_editing/editing-1.mp4" type="video/mp4">
+          </video>
+          <video id="teaser" autoplay loop muted playsinline style="height: 100%; width: auto;">
+              <source src="./static/videos/various_editing/editing-2.mp4" type="video/mp4">
+          </video>
+          <video id="teaser" autoplay loop muted playsinline style="height: 100%; width: auto;">
+              <source src="./static/videos/various_editing/editing-3.mp4" type="video/mp4">
+          </video>
+          <video id="teaser" autoplay loop muted playsinline style="height: 100%; width: auto;">
+              <source src="./static/videos/various_editing/editing-4.mp4" type="video/mp4">
+          </video>
+          <video id="teaser" autoplay loop muted playsinline style="height: 100%; width: auto;">
+              <source src="./static/videos/various_editing/editing-5.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code> @inproceedings{fang2024chat,
+      title={Chat-edit-3d: Interactive 3d scene editing via text prompts},
+      author={Fang, Shuangkang and Wang, Yufeng and Tsai, Yi-Hsuan and Yang, Yi and Ding, Wenrui and Zhou, Shuchang and Yang, Ming-Hsuan},
+      booktitle={European Conference on Computer Vision},
+      pages={199--216},
+      year={2024},
+      organization={Springer}
+}</code></pre>
+<!-- <pre><code>Coming Soon</code></pre> -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://arxiv.org/abs/2407.06842" class="external-link" disabled>
+        <i class="ai ai-arxiv"></i>
+      </a>
+      
+      <a class="icon-link" href="https://github.com/Fangkang515/CE3D/tree/main" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+      
+      <a class="icon-link" href="mailto: skfang@buaa.edu.cn" class="external-link" disabled>
+        <i class="fas fa-envelope"></i>
+      </a>
+      
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content", style="text-align: center;">
+          <p>
+            This website was developed referencing <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
