@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MeshLLM: Empowering Large Language Models to Progressively Understand and Generate 3D Mesh">
+  <meta name="keywords" content="LLM, Mesh">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> MeshLLM </title>
+
+  <style>
+    .video-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .subtitle {
+      text-align: center;
+    }
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+<section class="hero publication-header">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span class="icon-svg"></span> MeshLLM: Empowering Large Language Models to Progressively Understand and Generate 3D Mesh</h1>
+          <h1 class="title is-1 publication-title">ICCV (Highlight)</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"> <a href="http://sk-fun.fun/">Shuangkang Fang</a><sup>1</sup>,</span>
+            <span class="author-block"> <a href="https://jdily.github.io/">I-Chao Shen</a><sup>2</sup>,</span>
+            <span class="author-block"> <a href="https://shi.buaa.edu.cn/wangyufeng1/zh_CN/index.htm">Yufeng Wang</a><sup>1</sup>,</span>
+            <span class="author-block"> <a href="https://sites.google.com/site/yihsuantsai/">Yi-Hsuan Tsai</a><sup>3</sup>, </span>
+            <span class="author-block"> <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=5u95wzMAAAAJ">Yi Yang</a><sup>4</sup>, </span>
+            <span class="author-block"> <a href="https://scholar.google.com.hk/citations?user=zYI0rysAAAAJ&hl=fr&oi=ao">Shuchang Zhou</a><sup>4</sup>, </span>
+            <span class="author-block"> <a href="https://shi.buaa.edu.cn/dingwenrui/zh_CN/index/127041/list/index.htm">Wenrui Ding</a><sup>1</sup>, </span>
+            <span class="author-block"> <a href="https://www-ui.is.s.u-tokyo.ac.jp/en/projects/">Takeo Igarashi</a><sup>2</sup>,</span>
+            <span class="author-block"> <a href="https://scholar.google.com.hk/citations?user=p9-ohHsAAAAJ&hl=fr">Ming-Hsuan Yang</a><sup>5</sup>, </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Beihang University;  </span>
+            <span class="author-block"><sup>2</sup>The University of Tokyo;  </span>
+            <span class="author-block"><sup>3</sup>Atmanity Inc.;  </span>
+            <span class="author-block"><sup>4</sup>StepFun;  </span>
+            <span class="author-block"><sup>5</sup>University of California, Merced</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="../papers/como.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fang_MeshLLM_Empowering_Large_Language_Models_to_Progressively_Understand_and_Generate_ICCV_2025_paper.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Fangkang515/MeshLLM/tree/main"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Email Link. 
+              <span class="link-block">
+                <a href="skfang@buaa.edu.cn"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-envelope"></i>
+                  </span>
+                  <span>Email</span>
+                  </a>
+              </span>
+              -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section", id="method">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <!-- <h2 class="title is-3">LLM-Driven 3D Scene Editing</h2> -->
+        <div class="content has-text-justified">
+          <img id="teaser" height="100%" src="./static/images/teaser.png">  
+          
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<section class="section", id="method">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <!-- <h2 class="title is-3">LLM-Driven 3D Scene Editing</h2> -->
+        <div class="content has-text-justified">
+          <img id="teaser" height="100%" src="./static/images/method.png">  
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code> @inproceedings{fang2025meshllm,
+  title={MeshLLM: Empowering Large Language Models to Progressively Understand and Generate 3D Mesh},
+  author={Fang, Shuangkang and Shen, I and Wang, Yufeng and Tsai, Yi-Hsuan and Yang, Yi and Zhou, Shuchang and Ding, Wenrui and Igarashi, Takeo and Yang, Ming-Hsuan and others},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={14061--14072},
+  year={2025}
+}
+}</code></pre>
+<!-- <pre><code>Coming Soon</code></pre> -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://openaccess.thecvf.com/content/ICCV2025/html/Fang_MeshLLM_Empowering_Large_Language_Models_to_Progressively_Understand_and_Generate_ICCV_2025_paper.html" class="external-link" disabled>
+        <i class="ai ai-arxiv"></i>
+      </a>
+      
+      <a class="icon-link" href="https://github.com/Fangkang515/MeshLLM/tree/main" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+      
+      <a class="icon-link" href="mailto: skfang@buaa.edu.cn" class="external-link" disabled>
+        <i class="fas fa-envelope"></i>
+      </a>
+      
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content", style="text-align: center;">
+          <p>
+            This website was developed referencing <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
