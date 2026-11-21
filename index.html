@@ -86,7 +86,11 @@
           <p class="meta">TPAMI · Accepted</p>
           <h3><a href="https://arxiv.org/abs/2608.29137">Chat-Edit-3D++</a></h3>
           <p>Edit a 3D or 4D scene through conversation. Compare the original lake view with its ukiyo-e edit from the Chat-Edit-3D demo.</p>
-          <div class="links"><a href="https://sk-fun.fun/CE3D/">Project</a><a href="https://arxiv.org/abs/2608.29137">arXiv</a><a href="https://github.com/Fangkang515/CE3D">Code</a></div>
+          <div class="links">
+            <a href="https://sk-fun.fun/CE3D/">Project</a>
+            <a href="https://arxiv.org/abs/2608.29137">Paper</a>
+            <a href="https://github.com/Fangkang515/CE3D">Code</a>
+          </div>
         </div>
       </article>
       <div class="gallery">
@@ -95,12 +99,37 @@
           <p class="meta">ICCV 2025 · Highlight</p>
           <h3><a href="https://sk-fun.fun/MeshLLM/">MeshLLM</a></h3>
           <p>Can a language model connect a set of vertices into a recognizable shape? This illustrated dialogue recreates the shark example from the paper.</p>
+          <div class="links">
+            <a href="https://sk-fun.fun/MeshLLM/">Project</a>
+            <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fang_MeshLLM_Empowering_Large_Language_Models_to_Progressively_Understand_and_Generate_ICCV_2025_paper.html">Paper</a>
+            <a href="https://github.com/Fangkang515/MeshLLM">Code</a>
+          </div>
         </article>
         <article>
-          <video class="project-film" controls muted loop playsinline preload="none" poster="images/portfolio/pvd-al-lego.webp" src="images/portfolio/pvd-al-lego.mp4" width="480" height="480" aria-label="A moving divider compares a Lego scene trained from scratch with the PVD-AL result"></video>
+          <!-- Four cells from the teacher-by-student matrix in PVD-AL/static/videos/video_mutual_lego_15fps.mp4. -->
+          <video class="project-film" controls muted loop playsinline preload="none" poster="images/portfolio/pvd-al-conversions.webp" src="images/portfolio/pvd-al-conversions.mp4" width="792" height="440" aria-label="Hash grids and MLPs exchange teacher and student roles, followed by low-rank and sparse tensors. Each student renders the same rotating Lego scene."></video>
           <p class="meta">IJCV 2026</p>
           <h3><a href="https://sk-fun.fun/PVD-AL/">PVD-AL</a></h3>
-          <p>Transfer a scene between NeRF architectures. Watch the divider sweep across the Lego model to compare training from scratch with distillation from a hash-grid teacher.</p>
+          <p>A hash grid can teach an MLP to render the same scene, and an MLP can teach a hash grid. The Lego demo also shows distillation in both directions between low-rank and sparse tensors.</p>
+          <div class="links">
+            <a href="https://sk-fun.fun/PVD-AL/">Project</a>
+            <a href="https://link.springer.com/article/10.1007/s11263-026-02815-1">Paper</a>
+            <a href="https://github.com/megvii-research/AAAI2023-PVD/tree/PVD-AL">Code</a>
+          </div>
+        </article>
+        <article class="project-wide">
+          <!-- Matched detail crops from Figure 1, NeRF-GS/static/images/teaser.png. -->
+          <video class="project-film" controls muted loop playsinline preload="none" poster="images/portfolio/nerf-gs-kitchen.webp" src="images/portfolio/nerf-gs-kitchen.mp4" width="792" height="440" aria-label="Zoom into a mixing bowl and compare its reflections in the 3DGS and NeRF-GS renderings from Figure 1."></video>
+          <div>
+            <p class="meta">ICCV 2025</p>
+            <h3><a href="https://sk-fun.fun/NeRF-GS/">NeRF Is a Valuable Assistant for 3D Gaussian Splatting</a></h3>
+            <p>NeRF-GS uses a radiance field to guide Gaussian placement and trains the two representations together. Look at the reflections inside the mixing bowl to see which details it recovers.</p>
+            <div class="links">
+              <a href="https://sk-fun.fun/NeRF-GS/">Project</a>
+              <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fang_NeRF_Is_a_Valuable_Assistant_for_3D_Gaussian_Splatting_ICCV_2025_paper.html">Paper</a>
+              <a href="https://github.com/Fangkang515/NeRF-GS/tree/main">Code</a>
+            </div>
+          </div>
         </article>
       </div>
     </section>

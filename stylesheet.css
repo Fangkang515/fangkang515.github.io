@@ -44,7 +44,7 @@ nav a[aria-current] { color: var(--ink); text-decoration: underline; text-underl
 .feature-copy { padding: clamp(1.5rem, 3.2vw, 2.95rem); align-self: center; }
 .meta { color: var(--accent); font-size: .875rem; font-weight: 650; letter-spacing: .09em; text-transform: uppercase; }
 .featured h3 { font-size: clamp(2.2rem, 3.8vw, 3.5rem); letter-spacing: -.047em; line-height: 1.05; margin: .72rem 0 .8rem; }
-.feature-copy > p:not(.meta), .gallery article > p:not(.meta) { color: var(--muted); }
+.feature-copy > p:not(.meta), .gallery p:not(.meta) { color: var(--muted); }
 .feature-copy .links { margin-top: 1.15rem; }
 .comparison { --split: 48%; position: relative; min-height: 16rem; aspect-ratio: 1.83; width: 100%; align-self: stretch; overflow: hidden; background: #91b7c2; }
 .comparison .scene { position: absolute; width: 100%; height: 100%; object-fit: cover; }
@@ -60,6 +60,9 @@ nav a[aria-current] { color: var(--ink); text-decoration: underline; text-underl
 .gallery { display: grid; grid-template-columns: repeat(2,minmax(0, 1fr)); gap: 2.1rem; margin-top: 2.1rem; }
 .gallery .meta { margin: 1rem 0 .26rem; }
 .gallery h3 { font-size: clamp(1.75rem, 2.8vw, 2.45rem); letter-spacing: -.035em; line-height: 1.15; margin-bottom: .44rem; }
+.gallery .links { margin-top: 1rem; }
+.project-wide { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: inherit; align-items: center; padding-top: 2rem; border-top: 1px solid var(--line); }
+.project-wide .meta { margin-top: 0; }
 .project-actions { display: flex; align-items: center; gap: 1.2rem; }
 .project-actions button { font: inherit; font-size: .92rem; color: var(--accent); background: transparent; border: 1px solid #a6b7a7; border-radius: 4px; padding: .32rem .7rem; cursor: pointer; }
 .project-actions button:hover { background: #ecf1e9; }
@@ -110,10 +113,11 @@ footer [lang] { margin-left: .4rem; }
   .lead { margin: .4rem 0 0; }
   .section-head { padding: 1.3rem 0 1rem; flex-wrap: wrap; }
   .section-head h2 { font-size: 1.9rem; }
-  .featured, .gallery, .about-grid, .year { grid-template-columns: 1fr; }
+  .featured, .gallery, .project-wide, .about-grid, .year { grid-template-columns: 1fr; }
   .comparison { min-height: 0; }
   .feature-copy { padding: 1.35rem; }
   .gallery { margin-top: 1.4rem; gap: 1.75rem; }
+  .project-wide { gap: 1rem; padding-top: 0; border: 0; }
   .about-grid { gap: 1.75rem; }
   .paper { grid-template-columns: 1fr; }
   .paper img { width: 100%; max-height: 10.5rem; }
