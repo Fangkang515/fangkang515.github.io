@@ -14,9 +14,8 @@
   <header class="mast wrap">
     <a class="signature" href="./" aria-label="Shuangkang Fang, home">sf<span>.</span></a>
     <nav aria-label="Main navigation">
-      <a href="#projects" aria-current="page">Projects</a>
+      <a href="#about" aria-current="page">About Me</a>
       <a href="publications.html">Publications</a>
-      <a href="#about">About</a>
     </nav>
   </header>
   <main id="main" class="wrap">
@@ -35,51 +34,8 @@
       </a>
     </section>
 
-    <section id="projects" aria-labelledby="projects-title">
-      <div class="section-head">
-        <h2 id="projects-title">Selected projects</h2>
-        <a class="text-link" href="publications.html">All publications</a>
-      </div>
-      <article class="featured">
-        <div class="comparison" id="lake-demo">
-          <!-- Both views are from the ukiyo-e example in CE3D/static/videos/various_editing/editing-1.mp4. -->
-          <img class="scene" src="images/portfolio/lake-edited.webp" alt="Mount Fuji and a lake rendered in ukiyo-e style" width="333" height="182">
-          <img class="scene original" src="images/portfolio/lake-original.webp" alt="Original view of the same mountain and lake" width="333" height="182">
-          <span class="state before">Original</span>
-          <span class="state after">Edited</span>
-          <span class="divider" aria-hidden="true"><span>‹ ›</span></span>
-          <input type="range" min="0" max="100" value="48" aria-label="Reveal original lake scene" aria-valuetext="48 percent original" hidden>
-        </div>
-        <div class="feature-copy">
-          <p class="meta">TPAMI · Accepted</p>
-          <h3><a href="https://arxiv.org/abs/2608.29137">Chat-Edit-3D++</a></h3>
-          <p>Edit a 3D or 4D scene through conversation. Compare the original lake view with its ukiyo-e edit from the Chat-Edit-3D demo.</p>
-          <div class="links"><a href="https://sk-fun.fun/CE3D/">Project</a><a href="https://arxiv.org/abs/2608.29137">arXiv</a><a href="https://github.com/Fangkang515/CE3D">Code</a></div>
-        </div>
-      </article>
-      <div class="gallery">
-        <article>
-          <a class="mesh-art" href="https://sk-fun.fun/MeshLLM/" aria-label="Open the MeshLLM project">
-            <img src="images/portfolio/mesh-shark.webp" alt="A shark outlined by the triangular faces of its mesh" width="418" height="182">
-          </a>
-          <p class="meta">ICCV 2025 · Highlight</p>
-          <h3><a href="https://sk-fun.fun/MeshLLM/">MeshLLM</a></h3>
-          <p>Read and generate 3D meshes with a language model, one vertex and face at a time.</p>
-        </article>
-        <article>
-          <video class="flower-film" controls muted loop playsinline preload="none" poster="images/portfolio/flower-poster.webp" width="726" height="190" aria-label="DN2N demonstration. A moving view of red flowers and their blue and yellow edits.">
-            <source src="images/portfolio/flower-edits.mp4" type="video/mp4">
-            <a href="images/portfolio/flower-edits.mp4">Play the flower editing demo</a>
-          </video>
-          <p class="meta">TVCG 2026</p>
-          <h3><a href="https://sk-fun.fun/DN2N/">Editing without retraining</a></h3>
-          <p>Change a flower’s color with a text prompt and follow the edit as the camera moves around it.</p>
-        </article>
-      </div>
-    </section>
-
     <section id="about" aria-labelledby="about-title" class="about">
-      <h2 id="about-title">About</h2>
+      <h2 id="about-title">About Me</h2>
       <div class="about-grid">
         <div class="bio">
           <p>I received my Ph.D. in communication and information systems at Beihang University, supervised by <a href="https://shi.buaa.edu.cn/dingwenrui/zh_CN/index/127041/list/">Wenrui Ding</a> and <a href="https://shi.buaa.edu.cn/wangyufeng1/zh_CN/index/191819/list/index.htm">Yufeng Wang</a>. I also receive academic guidance from <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ&amp;hl=zh-CN">Ming-Hsuan Yang</a> and <a href="https://scholar.google.com/citations?user=2LJJtI8AAAAJ&amp;hl=en">Takeo Igarashi</a>.</p>
@@ -106,6 +62,47 @@
           <li><span>2024.01</span><a href="https://docs.google.com/presentation/d/1ec8xwGAcKPaNeMkUeXuDHYeUVazb6ubedMke5Mi6meA/edit?usp=sharing">LLM for Vision tasks</a></li>
         </ul>
       </details>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <h2 id="projects-title">Selected projects</h2>
+        <div class="project-actions">
+          <button id="motion-toggle" type="button" hidden>Pause animations</button>
+          <a class="text-link" href="publications.html">All publications</a>
+        </div>
+      </div>
+      <article class="featured">
+        <div class="comparison" id="lake-demo">
+          <!-- Both views are from the ukiyo-e example in CE3D/static/videos/various_editing/editing-1.mp4. -->
+          <video class="scene" muted loop playsinline preload="none" poster="images/portfolio/lake-edited.webp" src="images/portfolio/lake-edited.mp4" aria-label="Moving view of Mount Fuji in ukiyo-e style"></video>
+          <video class="scene original" muted loop playsinline preload="none" poster="images/portfolio/lake-original.webp" src="images/portfolio/lake-original.mp4" aria-label="Original moving view of Mount Fuji"></video>
+          <span class="state before">Original</span>
+          <span class="state after">Edited</span>
+          <span class="divider" aria-hidden="true"><span>‹ ›</span></span>
+          <input type="range" min="0" max="100" value="48" aria-label="Reveal original lake scene" aria-valuetext="48 percent original" hidden>
+        </div>
+        <div class="feature-copy">
+          <p class="meta">TPAMI · Accepted</p>
+          <h3><a href="https://arxiv.org/abs/2608.29137">Chat-Edit-3D++</a></h3>
+          <p>Edit a 3D or 4D scene through conversation. Compare the original lake view with its ukiyo-e edit from the Chat-Edit-3D demo.</p>
+          <div class="links"><a href="https://sk-fun.fun/CE3D/">Project</a><a href="https://arxiv.org/abs/2608.29137">arXiv</a><a href="https://github.com/Fangkang515/CE3D">Code</a></div>
+        </div>
+      </article>
+      <div class="gallery">
+        <article>
+          <video class="project-film" controls muted loop playsinline preload="none" poster="images/portfolio/mesh-dialogue.webp" src="images/portfolio/mesh-dialogue.mp4" width="720" height="400" aria-label="Illustrated MeshLLM dialogue showing vertices connected into a shark mesh"></video>
+          <p class="meta">ICCV 2025 · Highlight</p>
+          <h3><a href="https://sk-fun.fun/MeshLLM/">MeshLLM</a></h3>
+          <p>Can a language model connect a set of vertices into a recognizable shape? This illustrated dialogue recreates the shark example from the paper.</p>
+        </article>
+        <article>
+          <video class="project-film" controls muted loop playsinline preload="none" poster="images/portfolio/pvd-al-lego.webp" src="images/portfolio/pvd-al-lego.mp4" width="480" height="480" aria-label="A moving divider compares a Lego scene trained from scratch with the PVD-AL result"></video>
+          <p class="meta">IJCV 2026</p>
+          <h3><a href="https://sk-fun.fun/PVD-AL/">PVD-AL</a></h3>
+          <p>Transfer a scene between NeRF architectures. Watch the divider sweep across the Lego model to compare training from scratch with distillation from a hash-grid teacher.</p>
+        </article>
+      </div>
     </section>
     <script src="comparison.js" defer></script>
   </main>

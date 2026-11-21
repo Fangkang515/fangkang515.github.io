@@ -14,9 +14,8 @@
   <header class="mast wrap">
     <a class="signature" href="./" aria-label="Shuangkang Fang, home">sf<span>.</span></a>
     <nav aria-label="Main navigation">
-      <a href="./#projects">Projects</a>
+      <a href="./#about">About Me</a>
       <a href="publications.html" aria-current="page">Publications</a>
-      <a href="./#about">About</a>
     </nav>
   </header>
   <main id="main" class="wrap">
@@ -29,50 +28,54 @@
         <article class="paper">
           <img src="images/chat-edit-3d-plus.webp" alt="" loading="lazy" width="160" height="100">
           <div>
-            <p class="meta">TPAMI · Accepted</p>
             <h3><a href="https://arxiv.org/abs/2608.29137">Chat-Edit-3D++: Interactive 3D and 4D Scene Editing via Large Language Models</a></h3>
             <p class="authors"><strong>Shuangkang Fang</strong>, Yufeng Wang, Yi-Hsuan Tsai, Wenrui Ding, Yi Yang, Shuchang Zhou, Ming-Hsuan Yang.</p>
+            <p class="meta">TPAMI · Accepted</p>
             <div class="links">
               <a href="https://arxiv.org/abs/2608.29137">arXiv</a>
               <a href="https://sk-fun.fun/CE3D/">Project</a>
               <a href="https://github.com/Fangkang515/CE3D">Code</a>
             </div>
+            <p class="paper-summary">Chat-Edit-3D++ maps a scene onto 2D atlases so a language model can call image-editing tools over several rounds of conversation. Motion constraints extend the approach to moving objects in monocular video, while training on tool-use trajectories helps smaller models carry out multi-step edits.</p>
           </div>
         </article>
         <article class="paper">
           <img src="images/portfolio/thumbnails/pvd-al.webp" alt="" loading="lazy" width="160" height="100">
           <div>
-            <p class="meta">IJCV</p>
             <h3><a href="https://arxiv.org/abs/2304.04012">PVD-AL: Progressive Volume Distillation with Active Learning for Efficient Conversion Between Different NeRF Architectures</a></h3>
             <p class="authors"><strong>Shuangkang Fang</strong>, Yufeng Wang, Yi Yang, Weixin Xu, Heng Wang, Wenrui Ding, Shuchang Zhou.</p>
+            <p class="meta">IJCV 2026</p>
             <div class="links">
               <a href="https://sk-fun.fun/PVD-AL/">Project</a>
               <a href="https://arxiv.org/abs/2304.04012">arXiv</a>
             </div>
+            <p class="paper-summary">A scene that renders quickly in a hash grid can be easier to edit in a tensor representation. PVD-AL transfers the scene between NeRF architectures in stages, using feedback from the teacher to decide where the student needs more supervision.</p>
           </div>
         </article>
         <article class="paper">
           <img src="images/portfolio/thumbnails/DN2N.webp" alt="" loading="lazy" width="160" height="100">
           <div>
-            <p class="meta">TVCG</p>
             <h3><a href="https://arxiv.org/abs/2309.04917">Editing 3D Scenes via Text Prompts without Retraining</a></h3>
             <p class="authors"><strong>Shuangkang Fang</strong>, Yufeng Wang, Yi-Hsuan Tsai, Yi Yang, Wenrui Ding, Shuchang Zhou, Ming-Hsuan Yang.</p>
+            <p class="meta">TVCG 2026</p>
             <div class="links">
               <a href="https://sk-fun.fun/DN2N/">Project</a>
               <a href="https://arxiv.org/abs/2309.04917">arXiv</a>
             </div>
+            <p class="paper-summary">DN2N turns text-guided edits of individual images into a coherent 3D scene. It filters inconsistent views and trains a generalizable NeRF to handle the remaining variation, so a new scene or prompt can be edited without retraining.</p>
           </div>
         </article>
         <article class="paper">
           <img src="images/portfolio/thumbnails/dropansh-gs.webp" alt="" loading="lazy" width="160" height="100">
           <div>
-            <p class="meta">CVPR</p>
             <h3><a href="https://arxiv.org/abs/2602.20933">Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting</a></h3>
             <p class="authors"><strong>Shuangkang Fang</strong>, I-Chao Shen, Xuanyang Zhang, Zesheng Wang, Yufeng Wang, Wenrui Ding, Gang Yu, Takeo Igarashi.</p>
+            <p class="meta">CVPR 2026</p>
             <div class="links">
               <a href="https://sk-fun.fun/DropAnSH-GS/">Project</a>
               <a href="https://arxiv.org/abs/2602.20933">arXiv</a>
             </div>
+            <p class="paper-summary">When training views are sparse, nearby Gaussians can compensate for a Gaussian dropped during training. DropAnSH-GS drops whole neighborhoods and selected high-order color coefficients, improving novel views and allowing the trained model to be compressed.</p>
           </div>
         </article>
       </div>
@@ -83,25 +86,27 @@
         <article class="paper">
           <img src="images/portfolio/thumbnails/meshLLM.webp" alt="" loading="lazy" width="160" height="100">
           <div>
-            <p class="meta">ICCV · Highlight</p>
             <h3><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fang_MeshLLM_Empowering_Large_Language_Models_to_Progressively_Understand_and_Generate_ICCV_2025_paper.html">MeshLLM: Empowering Large Language Models to Progressively Understand and Generate 3D Mesh</a></h3>
             <p class="authors"><strong>Shuangkang Fang</strong>, I-Chao Shen, Yufeng Wang, Yi-Hsuan Tsai, Yi Yang, Shuchang Zhou, Wenrui Ding, Takeo Igarashi, Ming-Hsuan Yang.</p>
+            <p class="meta">ICCV 2025 · Highlight</p>
             <div class="links">
               <a href="https://sk-fun.fun/MeshLLM/">Project</a>
               <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fang_MeshLLM_Empowering_Large_Language_Models_to_Progressively_Understand_and_Generate_ICCV_2025_paper.html">Paper</a>
             </div>
+            <p class="paper-summary">MeshLLM represents mesh vertices and faces as text so a language model can describe a shape or generate one in response to a prompt. Training it to infer faces from vertices and assemble local mesh parts helps it learn how surfaces fit together.</p>
           </div>
         </article>
         <article class="paper">
           <img src="images/portfolio/thumbnails/NeRF-GS.webp" alt="" loading="lazy" width="160" height="100">
           <div>
-            <p class="meta">ICCV</p>
             <h3><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fang_NeRF_Is_a_Valuable_Assistant_for_3D_Gaussian_Splatting_ICCV_2025_paper.html">NeRF Is a Valuable Assistant for 3D Gaussian Splatting</a></h3>
             <p class="authors"><strong>Shuangkang Fang</strong>, I-Chao Shen, Takeo Igarashi, Yufeng Wang, ZeSheng Wang, Yi Yang, Wenrui Ding, Shuchang Zhou.</p>
+            <p class="meta">ICCV 2025</p>
             <div class="links">
               <a href="https://sk-fun.fun/NeRF-GS/">Project</a>
               <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Fang_NeRF_Is_a_Valuable_Assistant_for_3D_Gaussian_Splatting_ICCV_2025_paper.html">Paper</a>
             </div>
+            <p class="paper-summary">NeRF-GS fits a continuous radiance field and a set of Gaussians to the same scene. The radiance field guides Gaussian placement and shares spatial features across neighboring Gaussians, while learned offsets let individual splats capture local detail.</p>
           </div>
         </article>
       </div>
@@ -112,24 +117,26 @@
         <article class="paper">
           <img src="images/portfolio/thumbnails/CE3D.webp" alt="" loading="lazy" width="160" height="100">
           <div>
-            <p class="meta">ECCV</p>
             <h3><a href="https://arxiv.org/abs/2407.06842">Chat-Edit-3D: Interactive 3D Scene Editing via Text Prompts</a></h3>
             <p class="authors"><strong>Shuangkang Fang</strong>, Yufeng Wang, Yi-Hsuan Tsai, Yi Yang, Wenrui Ding, Shuchang Zhou, Ming-Hsuan Yang.</p>
+            <p class="meta">ECCV 2024</p>
             <div class="links">
               <a href="https://sk-fun.fun/CE3D/">Project</a>
               <a href="https://arxiv.org/abs/2407.06842">arXiv</a>
             </div>
+            <p class="paper-summary">Chat-Edit-3D lets a user revise a scene over several turns of conversation. A language model selects visual tools to edit a shared 2D atlas, and the same edit is then visible from different camera positions.</p>
           </div>
         </article>
         <article class="paper">
           <img src="images/portfolio/thumbnails/UAVENeRF.webp" alt="" loading="lazy" width="160" height="100">
           <div>
-            <p class="meta">TGRS</p>
             <h3><a href="https://ieeexplore.ieee.org/document/10476501">UAV-ENeRF: Text-driven UAV Scene Editing with Neural Radiance Fields</a></h3>
             <p class="authors">Yufeng Wang, <strong>Shuangkang Fang (equal contribution)</strong>, Huayu Zhang, Hongguang Li, Zehao Zhang, Xianlin Zeng, Wenrui Ding.</p>
+            <p class="meta">TGRS 2024</p>
             <div class="links">
               <a href="https://ieeexplore.ieee.org/document/10476501">Paper</a>
             </div>
+            <p class="paper-summary">UAV-ENeRF edits aerial scenes from text while accounting for the memory cost of high-resolution drone imagery. It edits sampled views at lower resolution, filters them for consistency with the prompt, and restores detail when rendering new views.</p>
           </div>
         </article>
       </div>
@@ -140,24 +147,26 @@
         <article class="paper">
           <img src="images/portfolio/thumbnails/AAAI2023_PVD.webp" alt="" loading="lazy" width="160" height="100">
           <div>
-            <p class="meta">AAAI · Oral</p>
             <h3><a href="https://arxiv.org/abs/2211.15977">One is All: Bridging the Gap Between Neural Radiance Fields Architectures with Progressive Volume Distillation</a></h3>
             <p class="authors"><strong>Shuangkang Fang</strong>, Weixin Xu, Heng Wang, Yi Yang, Yufeng Wang, Shuchang Zhou.</p>
+            <p class="meta">AAAI 2023 · Oral</p>
             <div class="links">
               <a href="https://sk-fun.fun/PVD/">Project</a>
               <a href="https://arxiv.org/abs/2211.15977">arXiv</a>
             </div>
+            <p class="paper-summary">Progressive Volume Distillation converts a trained NeRF between MLP, tensor and hash-table representations. It transfers what the teacher has learned at successive stages of volume rendering so the scene can be adapted to a different rendering or editing task.</p>
           </div>
         </article>
         <article class="paper">
           <img src="images/portfolio/thumbnails/BMVC_DFFG.webp" alt="" loading="lazy" width="160" height="100">
           <div>
-            <p class="meta">BMVC</p>
             <h3><a href="https://papers.bmvc2023.org/0514.pdf">DFFG: Fast Gradient Iteration for Data-free Quantization</a></h3>
             <p class="authors">Huixing Leng, <strong>Shuangkang Fang (equal contribution)</strong>, Yufeng Wang, Zehao Zhang, Dacheng Qi, Wenrui Ding.</p>
+            <p class="meta">BMVC 2023</p>
             <div class="links">
               <a href="https://papers.bmvc2023.org/0514.pdf">Paper</a>
             </div>
+            <p class="paper-summary">DFFG quantizes a pretrained network when its original training data are unavailable. It synthesizes calibration inputs from the model’s batch-normalization statistics and reuses intermediate gradient updates to speed up data generation.</p>
           </div>
         </article>
       </div>
